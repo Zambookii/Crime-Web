@@ -1,0 +1,65 @@
+@page
+@model YearAreaCrimeModel
+@{
+  ViewData["Title"] = "Area By Year Information";
+}
+
+<h2>Area By Year Information</h2>  
+
+@{
+   if (@Model.EX != null)
+	 {
+	   <br />
+		 <br />
+		 <h3>**ERROR: @Model.EX.Message</h3>
+		 <br />
+		 <hr />
+		 <br />
+		 <br />
+	 }
+}
+
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                Area
+            </th>  
+            <th>  
+                AreaName
+            </th>  
+            <th>  
+                Num of Crimes
+            </th>  
+            <th>  
+                Year 
+            </th> 
+        </tr>  
+    </thead>  
+    <tbody>  
+				@{
+				   int rank = 1;
+				 }
+				
+        @foreach (var item in Model.CrimeList)  
+        {  
+            <tr>  
+             
+                <td>  
+                    @item.Area
+                </td>  
+                <td>  
+                    @item.AreaName
+                </td>  
+                <td>  
+                    @item.NumOccured
+                </td>  
+                <td>  
+                    @item.Year
+                </td>  
+            </tr>  
+						
+						rank++;
+        }  
+    </tbody>  
+</table> 

@@ -1,0 +1,26 @@
+@page
+@model GetAreaYearInputModel
+@{
+  ViewData["Title"] = "Get Top 20 Area By Year Input";
+}
+
+<div class="container">  
+    <h2>Which year would you like to get the top 20 crime areas?</h2>  
+    <hr />  
+    <br />  
+		<form action="Top20CrimeArea" method="get">
+				
+        <div class="row">  
+            <div class="col-md-4">  
+                <label asp-for="Input">Enter a year:</label>  
+                <input asp-for="Input" class="form-control" />  
+            </div>  
+        </div>   
+				
+        <br />  
+        <input type="submit" value="Lookup" class="btn btn-primary" />  
+        <a class="btn btn-default" href="/">Cancel</a>  
+				
+    </form>
+</div>
+

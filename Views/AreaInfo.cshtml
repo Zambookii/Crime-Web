@@ -1,0 +1,65 @@
+@page
+@model AreaInfoModel
+@{
+  ViewData["Title"] = "All Area Information";
+}
+
+<h2>All Area Information</h2>  
+
+@{
+   if (@Model.EX != null)
+	 {
+	   <br />
+		 <br />
+		 <h3>**ERROR: @Model.EX.Message</h3>
+		 <br />
+		 <hr />
+		 <br />
+		 <br />
+	 }
+}
+
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                Area
+            </th>  
+            <th>  
+                AreaName
+            </th>  
+            <th>  
+                NumOccured 
+            </th>  
+            <th>  
+                PercentTotal 
+            </th> 
+        </tr>  
+    </thead>  
+    <tbody>  
+				@{
+				   int rank = 1;
+				 }
+				
+        @foreach (var item in Model.CrimeList)  
+        {  
+            <tr>  
+             
+                <td>  
+                    @item.Area
+                </td>  
+                <td>  
+                    @item.AreaName
+                </td>  
+                <td>  
+                    @item.NumOccured
+                </td>  
+                <td>  
+                    @item.PercentTotal
+                </td>  
+            </tr>  
+						
+						rank++;
+        }  
+    </tbody>  
+</table> 
